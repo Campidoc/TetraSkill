@@ -3,9 +3,8 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 import prettierConfig from "eslint-config-prettier";
 import prettierPlugin from "eslint-plugin-prettier";
-import { defineConfig } from "eslint/config";
 
-export default defineConfig([
+export default [
   { files: ["**/*.{js,mjs,cjs,ts,mts,cts}"] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
@@ -30,4 +29,4 @@ export default defineConfig([
     },
   },
   prettierConfig,
-]);
+];
