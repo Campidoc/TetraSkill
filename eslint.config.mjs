@@ -1,11 +1,11 @@
-import js from "@eslint/js";
-import globals from "globals";
-import tseslint from "typescript-eslint";
-import prettierConfig from "eslint-config-prettier";
-import prettierPlugin from "eslint-plugin-prettier";
+import js from '@eslint/js';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
+import prettierConfig from 'eslint-config-prettier';
+import prettierPlugin from 'eslint-plugin-prettier';
 
 export default [
-  { files: ["**/*.{js,mjs,cjs,ts,mts,cts}"] },
+  { files: ['**/*.{js,mjs,cjs,ts,mts,cts}'] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
@@ -19,13 +19,14 @@ export default [
       prettier: prettierPlugin,
     },
     rules: {
-      "prettier/prettier": "error",
-      "@typescript-eslint/no-unused-vars": [
-        "error",
+      'prettier/prettier': 'error',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
         {
-          argsIgnorePattern: "^_",
+          argsIgnorePattern: '^_',
         },
       ],
+      '@typescript-eslint/no-var-requires': 'off',
     },
   },
   prettierConfig,

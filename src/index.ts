@@ -1,1 +1,1 @@
-console.log("Проверка работы TetraSkill");
+console.log('Проверка работы TetraSkill');
