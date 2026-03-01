@@ -1,0 +1,49 @@
+{
+  "name": "tetraskill",
+  "version": "1.0.0",
+  "description": "QuadroTrain — a team training project for developing soft skills through 4 mini-games. Built with TypeScript, HTML, and CSS.\r - **Kirill** — [@Campidoc](https://github.com/Campidoc)\r - **Ayzanat** — [@ayzana](https://github.com/ayzana)\r - **Dzmitry** — [@dimitra86](https://github.com/dimitra86)\r - **Yahor** — [@yegor000](https://github.com/yegor000)",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "build": "webpack --mode production",
+    "dev": "webpack serve --mode development --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Campidoc/TetraSkill.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Campidoc/TetraSkill/issues"
+  },
+  "homepage": "https://github.com/Campidoc/TetraSkill#readme",
+  "devDependencies": {
+    "@eslint/js": "^8.57.1",
+    "@types/node": "^25.3.3",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "css-loader": "^7.1.2",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^13.24.0",
+    "html-webpack-plugin": "^5.6.5",
+    "mini-css-extract-plugin": "^2.9.4",
+    "prettier": "^3.7.4",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^7.18.0",
+    "validate-branch-name": "^1.3.2",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}
