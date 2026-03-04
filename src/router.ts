@@ -44,7 +44,7 @@ class Router {
         this.content.innerHTML = content;
       }
     } else {
-      this.content.innerHTML = '<h2>404</h2><a href="/">Home</a>';
+      this.content.innerHTML = '<h2>404</h2><a href="/TetraSkill/">Home</a>';
     }
   }
 
