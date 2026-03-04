@@ -11,3 +11,35 @@ export const HomePage = (): string => {
     </div>
   `;
 };
+
+export const game1 = (): string => {
+  return `
+    <div>
+      <h1>game1</h1>
+    </div>
+  `;
+};
+
+export const game2 = (): string => {
+  return `
+    <div>
+      <h1>game2</h1>
+    </div>
+  `;
+};
+
+export const game3 = (): string => {
+  return `
+    <div>
+      <h1>game3</h1>
+    </div>
+  `;
+};
+
+export const game4 = (): string => {
+  return `
+    <div>
+      <h1>game4</h1>
+    </div>
+  `;
+};
