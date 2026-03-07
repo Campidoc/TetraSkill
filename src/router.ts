@@ -3,6 +3,7 @@ type PageContent = string | (() => string);
 class Router {
   private routes: { [address: string]: PageContent } = {};
   private content: HTMLElement;
+  private basePath: string = '/TetraSkill';
 
   constructor(rootId: string) {
     const rootEl = document.getElementById(rootId);
@@ -16,11 +17,15 @@ class Router {
     document.addEventListener('click', (e) => {
       const link = (e.target as HTMLElement).closest('a');
       if (!link) return;
-
       const href = link.getAttribute('href');
-      if (href && href.startsWith('/')) {
+      if (!href) return;
+
+      if (href === '/') {
         e.preventDefault();
-        this.navigate(href);
+        this.navigate(this.basePath);
+      } else if (href.startsWith('/')) {
+        e.preventDefault();
+        this.navigate(this.basePath + href);
       }
     });
   }
@@ -34,8 +39,17 @@ class Router {
     this.render(address);
   }
 
+  private getCleanPath(path: string): string {
+    if (path.startsWith(this.basePath)) {
+      const clean = path.slice(this.basePath.length) || '/';
+      return clean;
+    }
+    return path;
+  }
+
   private render(address: string): void {
-    const content = this.routes[address];
+    const cleanPath = this.getCleanPath(address);
+    const content = this.routes[cleanPath];
 
     if (content) {
       if (typeof content === 'function') {
