@@ -10,4 +10,15 @@ describe('Router', () => {
     const router = new Router('app');
     expect(router).toBeDefined();
   });
+
+  it('should add route and render it', () => {
+    const router = new Router('app');
+    const mockPage = () => '<h1>Test Page</h1>';
+
+    router.addRoute('/test', mockPage);
+    router.navigate('/test');
+
+    const appDiv = document.getElementById('app');
+    expect(appDiv?.innerHTML).toBe('<h1>Test Page</h1>');
+  });
 });
