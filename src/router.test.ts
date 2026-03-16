@@ -21,4 +21,14 @@ describe('Router', () => {
     const appDiv = document.getElementById('app');
     expect(appDiv?.innerHTML).toBe('<h1>Test Page</h1>');
   });
+
+  it('should render 404 page for unknown route', () => {
+    const router = new Router('app');
+
+    router.navigate('/unknown-page');
+
+    const appDiv = document.getElementById('app');
+    expect(appDiv?.innerHTML).toContain('404');
+    expect(appDiv?.innerHTML).toContain('Home');
+  });
 });
