@@ -31,4 +31,26 @@ describe('Router', () => {
     expect(appDiv?.innerHTML).toContain('404');
     expect(appDiv?.innerHTML).toContain('Home');
   });
+
+  it('should intercept click on internal link', () => {
+    const router = new Router('app');
+
+    const link = document.createElement('a');
+    link.href = '/game1';
+    link.textContent = 'Game 1';
+    document.body.appendChild(link);
+
+    const originalNavigate = router.navigate;
+    let calledPath = '';
+
+    router.navigate = (path: string) => {
+      calledPath = path;
+    };
+
+    link.click();
+
+    expect(calledPath).toContain('/game1');
+
+    router.navigate = originalNavigate;
+  });
 });
