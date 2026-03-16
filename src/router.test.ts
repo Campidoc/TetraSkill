@@ -53,4 +53,15 @@ describe('Router', () => {
 
     router.navigate = originalNavigate;
   });
+
+  it('should render home page when navigating to base path', () => {
+    const router = new Router('app');
+    const homePage = () => '<h1>Home</h1>';
+
+    router.addRoute('/', homePage);
+    router.navigate('/TetraSkill/');
+
+    const appDiv = document.getElementById('app');
+    expect(appDiv?.innerHTML).toBe('<h1>Home</h1>');
+  });
 });
